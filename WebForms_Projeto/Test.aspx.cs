@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.OracleClient;
 
 
 namespace WebForms_Projeto
@@ -17,13 +18,8 @@ namespace WebForms_Projeto
         {
             try
             {
-                OracleConnection ora = new OracleConnection();
-                ora.ConnectionString = "User Id=bdip;Password=bdidesenv;Data Source=EGOVD";
+                
 
-                if (ora.State != System.Data.ConnectionState.Open)
-                {
-                    ora.Open();
-                }
 
             }
             catch (Exception ex)
@@ -33,11 +29,37 @@ namespace WebForms_Projeto
 
         }
 
+        
 
         protected void btnInserir_Click(object sender, EventArgs e)
         {
             dlSite.Items.Add(txtSite.Text); 
         }
 
+        private void btnCarregar_Click(object sender, EventArgs e)
+        {
+            OracleConnection ora = new OracleConnection();
+            ora.ConnectionString = "User Id=ora_tst;Password=ora_tst;Data Source=EGOVD";
+
+            if (ora.State != System.Data.ConnectionState.Open)
+            {
+                ora.Open();
+            }
+
+            ora.Open();
+            OracleCommand comando = new OracleCommand("gridtelefones", ora);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros",OracleType.Cursor).Direction=ParameterDirection.Output;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            gvOracle.DataSource = tabla;
+
+            ora.Clone();
+            
+
+        }
     }
 }

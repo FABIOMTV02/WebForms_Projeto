@@ -42,6 +42,14 @@
         </table>
         <p>
             &nbsp;</p>
+        <asp:SqlDataSource ID="OracleBD" runat="server"></asp:SqlDataSource>
+        <asp:GridView ID="gvOracle" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        </asp:GridView>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="btnCarregar" runat="server" Height="31px" OnClick="btnCarregar_Click" Text="Carregar Informações BD" Width="156px" />
+        </p>
     </form>
 </body>
 </html>
