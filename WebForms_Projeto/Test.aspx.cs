@@ -6,9 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using Oracle.ManagedDataAccess.Client;
+// using Oracle.ManagedDataAccess.Client;
 using System.Data.OracleClient;
 
+using System.Data;
 
 namespace WebForms_Projeto
 {
@@ -49,17 +50,16 @@ namespace WebForms_Projeto
             ora.Open();
             OracleCommand comando = new OracleCommand("gridtelefones", ora);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("registros",OracleType.Cursor).Direction=ParameterDirection.Output;
+            comando.Parameters.Add("FABIOTELEFONE",OracleType.Cursor).Direction=ParameterDirection.Output;
 
             OracleDataAdapter adaptador = new OracleDataAdapter();
             adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            gvOracle.DataSource = tabla;
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            gvOracle.DataSource = dt;
 
-            ora.Clone();
+            ora.Close();
             
-
         }
     }
 }
