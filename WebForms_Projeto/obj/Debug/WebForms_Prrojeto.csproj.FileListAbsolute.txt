@@ -5,3 +5,6 @@ C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\obj\Debug\WebForms_Prrojeto.cspro
 C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\obj\Debug\WebForms_Projeto.dll
 C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\obj\Debug\WebForms_Projeto.pdb
 C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\obj\Debug\WebForms_Prrojeto.csprojAssemblyReference.cache
+C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\bin\OracleGenerator.Helpers.dll
+C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\obj\Debug\WebForms_Prrojeto.csproj.CopyComplete
+C:\WorkSpace\WebForms_Projeto\WebForms_Projeto\bin\Oracle.ManagedDataAccess.dll

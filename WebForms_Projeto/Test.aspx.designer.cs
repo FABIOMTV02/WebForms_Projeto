@@ -67,15 +67,6 @@ namespace WebForms_Projeto {
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// OracleBD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource OracleBD;
-        
-        /// <summary>
         /// gvOracle control.
         /// </summary>
         /// <remarks>
@@ -85,12 +76,12 @@ namespace WebForms_Projeto {
         protected global::System.Web.UI.WebControls.GridView gvOracle;
         
         /// <summary>
-        /// btnCarregar control.
+        /// lblErroMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCarregar;
+        protected global::System.Web.UI.WebControls.Label lblErroMsg;
     }
 }
