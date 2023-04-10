@@ -31,7 +31,7 @@ namespace WebForms_Projeto
 
                 //SQL
                 StringBuilder sql = new StringBuilder();
-                sql.Append("SELECT * FROM fabiotelefone");
+                sql.Append("SELECT * FROM FABIOTELEFONE FULL JOIN TIPOTEL ON FABIOTELEFONE.ID_tipo = TIPOTEL.ID");
 
                 //Criando o comando de pesquisa
                 OracleCommand comando = new OracleCommand();
