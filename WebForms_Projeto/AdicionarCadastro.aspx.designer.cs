@@ -103,15 +103,6 @@ namespace WebForms_Projeto {
         protected global::System.Web.UI.WebControls.Label lbl_TipoTel;
         
         /// <summary>
-        /// txt_Tipo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Tipo;
-        
-        /// <summary>
         /// DropDownList1_TipoTel control.
         /// </summary>
         /// <remarks>
@@ -137,6 +128,15 @@ namespace WebForms_Projeto {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Adicionar;
+        
+        /// <summary>
+        /// btn_Alterar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Alterar;
         
         /// <summary>
         /// lblMsgErro control.

@@ -74,9 +74,36 @@ namespace WebForms_Projeto
 
         protected void btn_Apagar_Click(object sender, EventArgs e)
         {
-            //String sql = "DELETE FROM FABIOTELEFONE WHERE(ID) = " +
-            //   "VALUES(:'ID')";
-            //this.AUD(sql, 2);
+            con.ConnectionString = "User Id=ora_tst;Password=ora_tst;Data Source=EGOVD";
+
+            //Abrindo a conexão
+            if (con.State != System.Data.ConnectionState.Open)
+            {
+                con.Open();
+            }
+
+            //"SELECT COUNT(1) AS total FROM SERVIDOR WHERE DS_CPF = '" + cpf + "' AND DS_APELIDO IS NULL"
+            //DELETE FROM FABIOTELEFONE WHERE ID = '22' AND NOME = 'Roger Guedes'
+            String sql = "DELETE FROM FABIOTELEFONE WHERE ID = '" + txt_Id.Text + "'";
+            this.AUD(sql, 2);
+        }
+
+        protected void btn_Alterar_Click(object sender, EventArgs e)
+        {
+            con.ConnectionString = "User Id=ora_tst;Password=ora_tst;Data Source=EGOVD";
+
+            //Abrindo a conexão
+            if (con.State != System.Data.ConnectionState.Open)
+            {
+                con.Open();
+            }
+
+            //"SELECT COUNT(1) AS total FROM SERVIDOR WHERE DS_CPF = '" + cpf + "' AND DS_APELIDO IS NULL"
+            //DELETE FROM FABIOTELEFONE WHERE ID = '22' AND NOME = 'Roger Guedes'
+            String sql = "UPDATE FABIOTELEFONE SET NOME = :NOME," +
+                "DDD=:DDD, TELEFONE=:TELEFONE " +
+                "WHERE ID = :ID";
+            this.AUD(sql, 1);
         }
 
         private void AUD(String sql_stmt, int state)
@@ -95,16 +122,16 @@ namespace WebForms_Projeto
                     cmd.Parameters.Add("NOME", OracleDbType.Varchar2, 25).Value = txt_Nome.Text;
                     cmd.Parameters.Add("DDD", OracleDbType.Varchar2, 25).Value = txt_Ddd.Text;
                     cmd.Parameters.Add("TELEFONE", OracleDbType.Varchar2, 25).Value = txt_Tel.Text;
-                    cmd.Parameters.Add("TIPO", OracleDbType.Varchar2, 10).Value = txt_Tipo.Text;
+                    cmd.Parameters.Add("TIPO", OracleDbType.Varchar2, 10).Value = DropDownList1_TipoTel.Text;
 
                     break;
                 case 1:
-                    //msg = "Row Updated Successfully!";
-                    //cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = last_name_txtbx.Text;
-                    //cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = email_txtbx.Text;
-                    //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = hire_date_picker.SelectedDate;
+                    msg = "Linha atualizada com sucesso!";
+                    cmd.Parameters.Add("NOME", OracleDbType.Varchar2, 25).Value = txt_Nome.Text;
+                    cmd.Parameters.Add("DDD", OracleDbType.Varchar2, 25).Value = txt_Ddd.Text;
+                    cmd.Parameters.Add("TELEFONE", OracleDbType.Varchar2, 25).Value = txt_Tel.Text;
+                    cmd.Parameters.Add("TIPO", OracleDbType.Varchar2, 10).Value = DropDownList1_TipoTel.Text;
 
-                    //cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(employee_id_txtbx.Text);
 
                     break;
                 case 2:
@@ -124,5 +151,6 @@ namespace WebForms_Projeto
                 throw expe;
             }
         }
+
     }
 }

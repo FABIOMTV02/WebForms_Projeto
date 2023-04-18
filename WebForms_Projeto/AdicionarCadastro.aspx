@@ -24,17 +24,17 @@
         </p>
         <p>
             <asp:Label ID="lbl_TipoTel" runat="server" Text="Tipo Tel"></asp:Label>
-            <asp:TextBox ID="txt_Tipo" runat="server" Height="16px"></asp:TextBox>
-        </p>
         <asp:DropDownList ID="DropDownList1_TipoTel" runat="server">
             <asp:ListItem>Movel</asp:ListItem>
             <asp:ListItem>Fixo</asp:ListItem>
             <asp:ListItem>Comercial</asp:ListItem>
             <asp:ListItem>Recado</asp:ListItem>
         </asp:DropDownList>
+        </p>
         <p>
         <asp:Button ID="btn_Apagar" runat="server" Text="Apagar" OnClick="btn_Apagar_Click" Width="77px" />
         <asp:Button ID="btn_Adicionar" runat="server" Text="Adicionar" OnClick="btn_Adicionar_Click" />
+            <asp:Button ID="btn_Alterar" runat="server" OnClick="btn_Alterar_Click" Text="Alterar" Width="64px" />
         </p>
         <asp:Label ID="lblMsgErro" runat="server" Text=""></asp:Label>
     </form>
