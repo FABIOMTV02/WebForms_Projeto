@@ -8,8 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Button ID="btn_Adicionar" runat="server" Text="Adicionar" OnClick="btn_Adicionar_Click" />
-        <asp:Button ID="btn_Apagar" runat="server" Text="Apagar" OnClick="btn_Apagar_Click" />
         <p>
             <asp:Label ID="lbl_Id" runat="server" Text="ID:"></asp:Label>
             <asp:TextBox ID="txt_Id" runat="server" Height="16px"></asp:TextBox>
@@ -34,6 +32,11 @@
             <asp:ListItem>Comercial</asp:ListItem>
             <asp:ListItem>Recado</asp:ListItem>
         </asp:DropDownList>
+        <p>
+        <asp:Button ID="btn_Apagar" runat="server" Text="Apagar" OnClick="btn_Apagar_Click" Width="77px" />
+        <asp:Button ID="btn_Adicionar" runat="server" Text="Adicionar" OnClick="btn_Adicionar_Click" />
+        </p>
+        <asp:Label ID="lblMsgErro" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>
